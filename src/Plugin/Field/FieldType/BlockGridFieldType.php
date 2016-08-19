@@ -35,10 +35,10 @@ class BlockGridFieldType extends FieldItemBase {
    */
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['column_count_value'] = DataDefinition::create('string')
-      ->setLabel(t('Text value'))
+      ->setLabel(t('Column Count'))
       ->setRequired(TRUE);
     $properties['item_width_value'] = DataDefinition::create('string')
-      ->setLabel(t('Text value'))
+      ->setLabel(t('Item Width'))
       ->setRequired(TRUE);
 
     return $properties;
@@ -77,9 +77,8 @@ class BlockGridFieldType extends FieldItemBase {
    * {@inheritdoc}
    */
   public function isEmpty() {
-    $items = $this->get('items')->getValue();
-    $width = $this->get('width')->getValue();
+    $items = $this->get('item_width_value')->getValue();
 
-    return $items === NULL || $items === '' || $width === NULL || $width === '';
+    return $items === NULL;
   }
 }

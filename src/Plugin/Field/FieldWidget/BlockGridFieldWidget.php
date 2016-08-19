@@ -47,7 +47,6 @@ class BlockGridFieldWidget extends WidgetBase {
 
       $item_width_select_options[$config['key']] = $config['display_name'];
     }
-    kint($items[$delta]);
 
     foreach ($column_count_config as $config) {
       if (!$config) {
@@ -57,20 +56,7 @@ class BlockGridFieldWidget extends WidgetBase {
       $column_count_select_options[$config['key']] = $config['display_name'];
     }
 
-    $element['container'] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => 'block-grid-field-wrapper',
-      ),
-    );
-
-    $element['container']['block_grid_selects'] = [
-      '#type' => 'fieldset',
-      '#title' => $this->t('Block Grid Settings'),
-      '#field_suffix' => '<div class="block-grid--indicator"></div>'
-    ];
-
-    $element['container']['block_grid_selects']['column_count_value'] = [
+    $element['column_count_value'] = [
       '#type' => 'select',
       '#default_value' => isset($items[$delta]->column_count_value) ? $items[$delta]->column_count_value : NULL,
       '#options' => $column_count_select_options,
@@ -78,13 +64,23 @@ class BlockGridFieldWidget extends WidgetBase {
       '#suffix' => '<div class="form-item suffix label">' . t('Columns'). '</div>'
     ];
 
-    $element['container']['block_grid_selects']['item_width_value'] = [
+    $element['item_width_value'] = [
       '#type' => 'select',
       '#default_value' => isset($items[$delta]->item_width_value) ? $items[$delta]->item_width_value : NULL,
       '#options' => $item_width_select_options,
       '#theme' => 'block_grid_select',
       '#suffix' => '<div class="form-item suffix label">' . t('Width'). '</div>'
     ];
+
+    // If cardinality is 1, ensure a label is output for the field by wrapping
+    // it in a details element.
+    if ($this->fieldDefinition->getFieldStorageDefinition()->getCardinality() == 1) {
+      $element += array(
+        '#type' => 'fieldset',
+        '#attributes' => array('class' => array('block-grid-field-wrapper')),
+        '#field_suffix' => '<div class="block-grid--indicator"></div>'
+      );
+    }
 
     return $element;
   }
