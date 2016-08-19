@@ -1,0 +1,9 @@
+block_grid_field.settings:
+  path: '/admin/config/content/block_grid_field'
+  defaults:
+    _form: '\Drupal\block_grid_field\Form\BlockGridFieldForm'
+    _title: 'Settings for Block Grid Field'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

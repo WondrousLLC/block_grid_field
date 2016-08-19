@@ -1,0 +1,23 @@
+class_prefix: 'block-grid-'
+item_width_prefix: 'item-width'
+item_width:
+  -
+    key: default
+    display_name: 'Default'
+  -
+    key: narrow
+    display_name: 'Narrow'
+column_count_prefix: 'column-count'
+column_count:
+  -
+    key: 1
+    display_name: 'One'
+  -
+    key: 2
+    display_name: 'Two'
+  -
+    key: 3
+    display_name: 'Three'
+  -
+    key: 4
+    display_name: 'Four'

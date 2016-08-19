@@ -1,0 +1,7 @@
+select:
+  version: VERSION
+  css:
+    theme:
+      css/block_grid.css: {}
+  js:
+    js/block_grid.js: {}

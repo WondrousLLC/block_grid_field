@@ -1,0 +1,27 @@
+block_grid_field.settings:
+  type: config_object
+  mapping:
+    item_width:
+      label: 'Item Width'
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          key:
+            label: 'Key'
+            type: string
+          display_name:
+            label: 'Display Name'
+            type: string
+    column_count:
+      label: 'Column Count'
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          key:
+            label: 'Key'
+            type: string
+          display_name:
+            label: 'Display Name'
+            type: string

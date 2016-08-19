@@ -1,0 +1,6 @@
+name: 'Block Grid Field'
+type: module
+description: 'Special Dropdown combination to indicate a block grid layout.'
+core: 8.x
+package: WONDROUS
+configure: block_grid_field.settings

@@ -1,0 +1,6 @@
+block_grid_field.settings:
+  title: 'Block Grids Settings'
+  description: 'Configure the available colors for the Stripe Field'
+  parent: system.admin_config_content
+  route_name: block_grid_field.settings
+  weight: 100

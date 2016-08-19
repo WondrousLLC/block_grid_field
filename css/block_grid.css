@@ -1,0 +1,42 @@
+.block-grid-field-wrapper .fieldset-wrapper .form-item {
+  display: block;
+  float: left;
+}
+.block-grid-field-wrapper select {
+  float: left;
+  min-width: 6rem;
+}
+.block-grid-field-wrapper .suffix.label {
+  float: left;
+  min-width: 6rem;
+  line-height: 1.5rem;
+  margin-left: .5rem;
+  font-size: 0.875rem;
+}
+
+.block-grid-field-wrapper .field-suffix {
+  float: right;
+}
+.block-grid-field-wrapper .block-grid--indicator {
+  width: 6rem;
+  height: 3rem;
+  background-color: grey;
+}
+
+.block-grid-field-wrapper .fieldset-wrapper:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.block-grid-field-indicator {
+  display: block;
+  float: left;
+  background-color: white;
+  width: 6rem;
+  height: 1.5rem;
+  border: 1px solid black;
+  box-shadow: inset 0 0 0 1px white;
+  margin-left: .5rem;
+  box-sizing: border-box;
+}
