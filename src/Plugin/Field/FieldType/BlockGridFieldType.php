@@ -74,6 +74,49 @@ class BlockGridFieldType extends FieldItemBase {
   }
 
   /**
+   * The fully prefixed class name of the column count
+   *
+   * @return string
+   */
+  public function getColumnWidthClass() {
+    return $this->getSingleClassString($this->get('column_count_value')->getValue(), 'column_count_prefix');
+  }
+
+  /**
+   * The fully prefixed class name of the item width
+   *
+   * @return string
+   */
+  public function getItemCountClass() {
+    return $this->getSingleClassString($this->get('item_width_value')->getValue(), 'item_width_prefix');
+  }
+
+  /**
+   * @param string $value
+   * @param string $prefix_config_key
+   * @return string
+   */
+  private function getSingleClassString($value, $prefix_config_key) {
+    $config = \Drupal::config('block_grid_field.settings');
+    $strings = [
+      $config->get('class_prefix'),
+      $config->get($prefix_config_key),
+      $value,
+    ];
+
+    array_filter($strings);
+
+    return implode('-', $strings);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getString() {
+    return $this->getColumnWidthClass() . ' ' . $this->getItemCountClass();
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function isEmpty() {

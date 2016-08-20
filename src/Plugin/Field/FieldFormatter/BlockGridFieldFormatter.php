@@ -7,6 +7,7 @@
 
 namespace Drupal\block_grid_field\Plugin\Field\FieldFormatter;
 
+use Drupal\block_grid_field\Plugin\Field\FieldType\BlockGridFieldType;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -53,14 +54,15 @@ class BlockGridFieldFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
-    $element = array();
+    $element = [];
 
     foreach ($items as $delta => $item) {
+      /** @var BlockGridFieldType $item */
       // Render each element as markup.
-      $element[$delta] = array(
+      $element[$delta] = [
         '#type' => 'markup',
-        '#markup' => $item->value,
-      );
+        '#markup' => $item->getValue(),
+      ];
     }
 
     return $element;
