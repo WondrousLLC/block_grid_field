@@ -7,6 +7,8 @@
 
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Element\RenderElement;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_help().
@@ -35,4 +37,29 @@ function block_grid_field_theme() {
       'base hook' => 'select',
     ),
   ];
+}
+
+/**
+ * Prepares variables for select element templates.
+ *
+ * Default template: select.html.twig.
+ *
+ * It is possible to group options together; to do this, change the format of
+ * $options to an associative array in which the keys are group labels, and the
+ * values are associative arrays in the normal $options format.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ *     Properties used: #title, #value, #options, #description, #extra,
+ *     #multiple, #required, #name, #attributes, #size.
+ */
+function block_grid_field_preprocess_block_grid_select(&$variables) {
+  $element = $variables['element'];
+
+  Element::setAttributes($element, array('id', 'name', 'size'));
+  RenderElement::setAttributes($element, array('form-select'));
+
+  $variables['attributes'] = $element['#attributes'];
+  $variables['options'] = form_select_options($element);
 }
