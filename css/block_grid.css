@@ -32,6 +32,9 @@
   box-sizing: border-box;
 }
 .block-grid--indicator {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
   width: 6rem;
   height: 3rem;
   background-color: rgba(0,116,189,.6);
