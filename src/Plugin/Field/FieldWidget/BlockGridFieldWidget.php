@@ -72,16 +72,33 @@ class BlockGridFieldWidget extends WidgetBase {
       '#suffix' => '<div class="form-item suffix label">' . t('Width'). '</div>'
     ];
 
+    $item_width_preselect = isset($items[$delta]->item_width_value) ? $items[$delta]->item_width_value : array_keys($item_width_select_options)[0];
+    $column_count_preselect = isset($items[$delta]->column_count_value) ? $items[$delta]->column_count_value : array_keys($item_width_select_options)[0];
+
     // If cardinality is 1, ensure a label is output for the field by wrapping
     // it in a details element.
     if ($this->fieldDefinition->getFieldStorageDefinition()->getCardinality() == 1) {
       $element += array(
         '#type' => 'fieldset',
         '#attributes' => array('class' => array('block-grid-field-wrapper')),
-        '#field_suffix' => '<div class="block-grid--indicator"></div>'
+        '#field_suffix' => $this->renderIndicator($item_width_preselect, $column_count_preselect)
       );
     }
 
     return $element;
+  }
+
+  private function renderIndicator($item_width, $column_count) {
+    $html = '<div class="block-grid--indicator">';
+    $html .= "<ul class=\"{$item_width}\">";
+
+    for ($i = 1; $i <= $column_count; $i++) {
+      $html .= '<li><div>&nbsp;</div></li>';
+    }
+
+    $html .= '</ul>';
+    $html .= '</div>';
+
+    return $html;
   }
 }
