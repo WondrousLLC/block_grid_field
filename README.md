@@ -7,7 +7,7 @@ Drupal 8 module. Special Dropdown Combination to indicate a block grid layout.
 After install you will find a new field Type. Use as desired.
 Go to the settings page `/admin/config/content/block_grid_field` and edit.
 
-# Srceen
+# Demo Screen
 
 When placed into a field it looks like this:
 
