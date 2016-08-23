@@ -81,7 +81,7 @@ class BlockGridFieldWidget extends WidgetBase {
       $element += array(
         '#type' => 'fieldset',
         '#attributes' => array('class' => array('block-grid-field-wrapper')),
-        '#field_suffix' => $this->renderIndicator($item_width_preselect, $column_count_preselect)
+        '#field_suffix' => $this->renderIndicator($item_width_preselect, $column_count_preselect),
       );
     }
 

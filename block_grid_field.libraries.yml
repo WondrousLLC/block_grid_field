@@ -5,3 +5,5 @@ select:
       css/block_grid.css: {}
   js:
     js/block_grid.js: {}
+  dependencies:
+    - core/jquery

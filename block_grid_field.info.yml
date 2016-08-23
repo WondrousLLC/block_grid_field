@@ -1,6 +1,9 @@
 name: 'Block Grid Field'
+version: '8.x-1.0'
 type: module
 description: 'Special Dropdown combination to indicate a block grid layout.'
 core: 8.x
 package: WONDROUS
 configure: block_grid_field.settings
+interface translation project: block_grid_field
+interface translation server pattern: modules/contrib/block_grid_field/%project-%version-%language.po

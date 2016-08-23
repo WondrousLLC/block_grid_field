@@ -1,0 +1,17 @@
+msgid "One"
+msgstr "Eins"
+
+msgid "Two"
+msgstr "Zwei"
+
+msgid "Three"
+msgstr "Drei"
+
+msgid "Four"
+msgstr "Vier"
+
+msgid "Narrow"
+msgstr "Schmal"
+
+msgid "Block Grid Setting"
+msgstr "Block Grid Einstellung"

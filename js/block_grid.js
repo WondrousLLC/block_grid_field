@@ -1,15 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
+jQuery(function ($) {
   'use strict';
-
-  var wrappers = document.querySelectorAll('fieldset.block-grid-field-wrapper');
-
-  if (!wrappers) {
-    return;
-  }
-
-  function addEvent(el, type, handler) {
-    if (el.attachEvent) el.attachEvent('on' + type, handler); else el.addEventListener(type, handler);
-  }
 
   function updateIndicatorWidth(listWrapper, className) {
     listWrapper.classList = className;
@@ -25,18 +15,28 @@ document.addEventListener('DOMContentLoaded', function () {
     listWrapper.innerHTML = inner;
   }
 
-  [].forEach.call(wrappers, function (wrapper) {
-    var selects = wrapper.getElementsByTagName('select');
-    var columnCountSelect = selects[0];
-    var itemWidthSelect = selects[1];
-    var list = wrapper.querySelector('.block-grid--indicator').firstElementChild;
+  function init() {
+    var $wrappers = $('fieldset.block-grid-field-wrapper');
 
-    addEvent(columnCountSelect, 'change', function () {
-      updateIndicatorColumns(list, this.value);
-    });
+    if (!$wrappers.length) {
+      return;
+    }
 
-    addEvent(itemWidthSelect, 'change', function () {
-      updateIndicatorWidth(list, this.value);
+    $wrappers.each(function () {
+      var selects = this.getElementsByTagName('select');
+      var list = this.querySelector('.block-grid--indicator').firstElementChild;
+
+      $(selects[0]).on('change', function () {
+        updateIndicatorColumns(list, this.value);
+      });
+
+      $(selects[1]).on('change', function () {
+        updateIndicatorWidth(list, this.value);
+      });
     });
-  });
+  }
+
+  init();
+
+  $(document).ajaxComplete(init);
 });
