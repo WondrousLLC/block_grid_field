@@ -13,6 +13,10 @@ When placed into a field it looks like this:
 
 ![](docs/block-grid-setting-demo.gif)
 
+Backend settings page
+
+![](docs/block-grid-settings-page.png)
+
 # Credits
 
 code base: [github.com/WondrousLLC/block_grid_field](https://github.com/WondrousLLC/block_grid_field/)
