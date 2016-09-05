@@ -1,4 +1,4 @@
-jQuery(function ($) {
+(function ($, Drupal) {
   'use strict';
 
   function updateIndicatorWidth(listWrapper, className) {
@@ -15,8 +15,8 @@ jQuery(function ($) {
     listWrapper.innerHTML = inner;
   }
 
-  function init() {
-    var $wrappers = $('fieldset.block-grid-field-wrapper');
+  function init(context) {
+    var $wrappers = $('fieldset.block-grid-field-wrapper', context);
 
     if (!$wrappers.length) {
       return;
@@ -36,7 +36,7 @@ jQuery(function ($) {
     });
   }
 
-  init();
-
-  $(document).ajaxComplete(init);
-});
+  Drupal.behaviors.blockGridField = {
+    attach: init
+  };
+})(jQuery, Drupal);
