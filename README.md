@@ -1,3 +1,5 @@
+# Deprecated
+
 # block_grid_field
 
 Drupal 8 module. Special Dropdown Combination to indicate a block grid layout.
@@ -19,6 +21,6 @@ Backend settings page
 
 # Credits
 
-code base: [github.com/WondrousLLC/block_grid_field](https://github.com/WondrousLLC/block_grid_field/)
+code base: [github.com/wearewondrous/block_grid_field](https://github.com/wearewondrous/block_grid_field/)
 
-developed by [WONDROUS LLC](https://www.wearewondrous.com/)
+developed by [WONDROUS](https://www.wearewondrous.com/)

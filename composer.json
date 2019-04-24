@@ -1,14 +1,14 @@
 {
-  "name": "WondrousLLC/block_grid_field",
+  "name": "wearewondrous/block_grid_field",
   "type": "drupal-module",
   "description": "Special Dropdown combination to indicate a block grid layout.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://github.com/WondrousLLC/block_grid_field",
+  "homepage": "https://github.com/wearewondrous/block_grid_field",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://github.com/WondrousLLC/block_grid_field/issues",
-    "source": "https://github.com/WondrousLLC/block_grid_field.git"
+    "issues": "https://github.com/wearewondrous/block_grid_field/issues",
+    "source": "https://github.com/wearewondrous/block_grid_field.git"
   },
   "require": { }
 }
